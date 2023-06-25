@@ -212,6 +212,18 @@ header {
 .add-cart:hover {
   background: hsl(249, 32%, 17%);
 }
+.cart-content {
+  overflow-y: scroll;
+  max-height: 75vh;
+}
+.wrap-total {
+  padding: 0 20px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-color);
+}
 
 @media (max-width: 1080px) {
   .nav {
