@@ -23,7 +23,7 @@ body {
   color: var(--text-color);
 }
 .container {
-  max-width: 1024px;
+  max-width: 1068px;
   margin: auto;
   width: 100%;
 }
@@ -48,7 +48,7 @@ header {
 .logo {
   font-size: 1.1rem;
   color: var(--text-color);
-  font-weight: 400;
+  font-weight: 600;
 }
 /* Cart */
 .cart {
@@ -62,22 +62,9 @@ header {
   box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
   transition: 0.3s;
 }
-/* .cart::before {
-  position: absolute;
-  content: "";
-  background: var(--text-color);
-  opacity: 0.3;
-  width: 100vw;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-.cart.active::before {
-  left: -100vw;
-} */
 .cart.active {
   right: 0;
+  transition: 0.3s;
 }
 .cart-title {
   text-align: center;
@@ -86,8 +73,28 @@ header {
   margin-top: 2rem;
 }
 #cart-icon {
+  position: relative;
   font-size: 1.8rem;
   cursor: pointer;
+}
+#cart-icon[data-quantitiy]::after {
+  contain: "";
+}
+#cart-icon[data-quantitiy]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -12px;
+  width: 20px;
+  height: 20px;
+  background: var(--text-color);
+  border-radius: 50%;
+  color: var(--bg-color);
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cart-box {
   display: grid;
@@ -161,7 +168,7 @@ header {
   cursor: pointer;
 }
 .title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -177,6 +184,8 @@ header {
 }
 .product-box {
   position: relative;
+  border: 1px solid transparent;
+  transition: 0.4s;
 }
 .product-box:hover {
   padding: 10px;
@@ -184,7 +193,7 @@ header {
   transition: 0.4s;
 }
 .product-box:hover .add-cart {
-  padding: 10px 9px 9px 10px;
+  padding: 10px;
 }
 .product-img {
   width: 100%;
@@ -223,6 +232,37 @@ header {
   left: 0;
   right: 0;
   background: var(--bg-color);
+}
+
+.sc-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sc-container img {
+  width: 100px;
+  margin: 2rem 0;
+}
+.sc-container h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+.sc-container p {
+  max-width: 600px;
+  font-size: 0.97rem;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.sc-btn {
+  padding: 12px 20px;
+  border-radius: 2rem;
+  background: var(--text-color);
+  color: var(--bg-color);
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 @media (max-width: 1080px) {
