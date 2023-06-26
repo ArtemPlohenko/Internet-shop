@@ -1,0 +1,27 @@
+{
+  "name": "internet-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtemPlohenko/Internet-shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtemPlohenko/Internet-shop/issues"
+  },
+  "homepage": "https://github.com/ArtemPlohenko/Internet-shop#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express.js": "^1.0.0",
+    "nodemon": "^2.0.22",
+    "stripe": "^12.10.0"
+  }
+}
