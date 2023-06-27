@@ -148,13 +148,13 @@ function saveCartItems() {
     const cartBox = cartBoxes[i];
     const titleElement = cartBox.getElementsByClassName("cart-product-title")[0];
     const priceElement = cart.getElementsByClassName("cart-price")[0];
-    const quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
+    const quantityElement = cartBox.getElementsByClassName("cart-quantity")[0]; /// ???
     const productImg = cartBox.getElementsByClassName("cart-img")[0].src;
 
     const item = {
       title: titleElement.innerText,
       price: priceElement.innerText,
-      quantity: quantityElement.innerText,
+      quantity: quantityElement.value,
       productImg: productImg,
     };
 

@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import stripe from "stripe";
-import { log } from "console";
+// import { log } from "console";
 
 // Load variables
 dotenv.config();
@@ -13,17 +13,17 @@ app.use(express.static("public"));
 app.use(express.json());
 
 // Home Route
-app.get("/", (reg, res) => {
+app.get("/", (req, res) => {
   res.sendFile("index.html", { root: "public" });
 });
 
 // Success
-app.get("/success", (reg, res) => {
+app.get("/success", (req, res) => {
   res.sendFile("success.html", { root: "public" });
 });
 
 // Cancel
-app.get("/cancel", (reg, res) => {
+app.get("/cancel", (req, res) => {
   res.sendFile("cancel.html", { root: "public" });
 });
 
@@ -32,6 +32,7 @@ let stripeGateway = stripe(process.env.stripe_api);
 let DOMAIN = process.env.DOMAIN;
 
 app.post("/stripe-checkout", async (req, res) => {
+  console.log(req.body.items);
   const lineItems = req.body.items.map((item) => {
     const unitAmount = parseInt(item.price.replace(/[^0-9.-]+/g, "") * 100);
     console.log("item-price: ", item.price);
